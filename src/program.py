@@ -50,8 +50,8 @@ def rotation_matrix(axis, theta):
 
 def project(points):
     """Project the points from 3D to 2D for pygame processing."""
-    scale = 200
-    camera_distance = 5
+    scale = 400
+    camera_distance = 4
     
     projection_matrix = np.array([[1, 0, 0],
                                  [0, 1, 0]])
@@ -92,7 +92,7 @@ def main():
 
         for edge in EDGES:
             points = [projected_vertices[edge[0]], projected_vertices[edge[1]]]
-            pygame.draw.line(SCREEN, WHITE, points[0], points[1], 1)
+            pygame.draw.line(SCREEN, WHITE, points[0], points[1], 2)
 
         pygame.display.flip()
         clock.tick(60)
